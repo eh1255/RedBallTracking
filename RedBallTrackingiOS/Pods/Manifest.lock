@@ -1,12 +1,18 @@
 PODS:
+  - MZAppearance (1.1.6)
+  - MZFormSheetPresentationController (2.4.0):
+    - MZAppearance
   - OpenCV (3.0.0)
 
 DEPENDENCIES:
+  - MZFormSheetPresentationController
   - OpenCV
 
 SPEC CHECKSUMS:
+  MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
+  MZFormSheetPresentationController: 3b9b6d76adc9f81c2defd0bb59e0f3dc2431e41e
   OpenCV: be07c02f0d8f125f1d40d261e66a66cb66ece3b3
 
-PODFILE CHECKSUM: f3156f33cdde089ab1fa0909240b9ccbf0345343
+PODFILE CHECKSUM: 7d892bd207a65c70ab42d65c047583a97d2992bf
 
 COCOAPODS: 1.0.1

@@ -7,22 +7,36 @@
 //
 
 import UIKit
+import MZFormSheetPresentationController
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var settingsButton: UIButton!
+
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Starting the camera immediately in viewDidLoad, so I just tossed in a delay to give the views time to load up
+        // You could do it in viewDidAppear as well, but that can get called multiple times. This solution doesn't require any extra variables
+        performSelector(#selector(startCamera), withObject: nil, afterDelay: 2.5)
+    }
+    
+    func startCamera() {
+         OpenCVWrapper.sharedInstance().setupVideoCamera(imageView)
+    }
+    
+    @IBAction func showSettings(sender: AnyObject) {
+        // Present the settings controller in a popover view
+        let settingsController = storyboard?.instantiateViewControllerWithIdentifier("Settings") as! SettingsViewController
         
-        let image = UIImage(named: "testImage")!
-        let processedImages = OpenCVWrapper.processImageWithOpenCV(image)
+        let formSheetController   = MZFormSheetPresentationViewController(contentViewController: settingsController)
+        formSheetController.presentationController?.shouldDismissOnBackgroundViewTap = true
+        formSheetController.presentationController?.contentViewSize = CGSizeMake(view.frame.width*0.85, view.frame.height*0.85)
+        self.presentViewController(formSheetController, animated: true, completion: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
