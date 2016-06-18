@@ -13,4 +13,7 @@
 
 + (UIImage *)processImageWithOpenCV:(UIImage*)inputImage;
 
+
+
+
 @end
