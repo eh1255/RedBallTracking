@@ -12,12 +12,23 @@ class SettingsViewController: UIViewController {
     
     let ocv = OpenCVWrapper.sharedInstance()
     
-    override func viewDidLoad() {
-        var test = ocv.sMin
-        ocv.setValue(150, forKey: "sMin")
-        ocv.sMin = 130
-        test = ocv.sMin
-        print(test)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        ocv.showProcessedImage(true)
+        
+        hMin.setValue(Float(ocv.hMin), animated: false)
+        hMax.setValue(Float(ocv.hMax), animated: false)
+        
+        sMin.setValue(Float(ocv.sMin), animated: false)
+        sMax.setValue(Float(ocv.sMax), animated: false)
+        
+        vMin.setValue(Float(ocv.vMin), animated: false)
+        vMax.setValue(Float(ocv.vMax), animated: false)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillAppear(animated)
+        ocv.showProcessedImage(false)
     }
 
     // References to the sliders on the settings page

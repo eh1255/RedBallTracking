@@ -20,16 +20,16 @@
 // This is a singleton for providing global access to the OpenCV Wrapper
 + (OpenCVWrapper *)sharedInstance;
 
-- (UIImage *)processImageWithOpenCV:(UIImage*)inputImage;
 - (void)setupVideoCamera:(UIView*) parentView;
+- (void)showProcessedImage:(bool) show;
 
 // Filtering properties
-@property (nonatomic, assign) NSInteger hMin;
-@property (nonatomic, assign) NSInteger hMax;
-@property (nonatomic, assign) NSInteger sMin;
-@property (nonatomic, assign) NSInteger sMax;
-@property (nonatomic, assign) NSInteger vMin;
-@property (nonatomic, assign) NSInteger vMax;
+@property (atomic, assign) NSInteger hMin;
+@property (atomic, assign) NSInteger hMax;
+@property (atomic, assign) NSInteger sMin;
+@property (atomic, assign) NSInteger sMax;
+@property (atomic, assign) NSInteger vMin;
+@property (atomic, assign) NSInteger vMax;
 
 
 #ifdef __cplusplus

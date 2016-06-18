@@ -22,18 +22,27 @@ using namespace cv;
     self = [super init];
     self->ovc = OpenCVWrapper.sharedInstance;
     self->pastResults.resize(30);
+    self.showRaw = true;
     return self;
 }
 
+
  - (void)processImage:(Mat &)image
 {
+    // This function has no return. We have to work on image where it sits in memory
+    // To do that, we create a copy of it, modify the copy, and the overwrite image at the
+    // same address in memory when we're done
     Mat workingCopy;
     image.copyTo(workingCopy);
-    
+
     [self medianBlur:workingCopy];
     [self detectColor:workingCopy];
     [self erodeThenDilate:workingCopy];
-    [self contourAndDrawObjects:workingCopy drawOnto:image];
+    if (!showRaw) {
+        workingCopy.copyTo(image);
+    } else {
+        [self contourAndDrawObjects:workingCopy drawOnto:image];
+    }
 }
 
 
@@ -75,8 +84,8 @@ using namespace cv;
     cvtColor(image, image, CV_BGR2HSV);
     
     // Now filter the hue saturation and value according to the current settings
-    inRange(image, Scalar(160, 100, 100), Scalar(179, 255, 255),image);
-    // cout << [ovc hMax] << "\n";
+    inRange(image, Scalar(ovc.hMin, ovc.sMin, ovc.vMin), Scalar(ovc.hMax, ovc.sMax, ovc.vMax),image);
+    
 }
 
 

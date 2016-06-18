@@ -35,7 +35,8 @@ class ViewController: UIViewController {
         
         let formSheetController   = MZFormSheetPresentationViewController(contentViewController: settingsController)
         formSheetController.presentationController?.shouldDismissOnBackgroundViewTap = true
-        formSheetController.presentationController?.contentViewSize = CGSizeMake(view.frame.width*0.85, view.frame.height*0.85)
+        formSheetController.presentationController?.backgroundColor = UIColor.clearColor()
+        formSheetController.presentationController?.contentViewSize = CGSizeMake(view.frame.width*0.85, view.frame.height*0.65)
         self.presentViewController(formSheetController, animated: true, completion: nil)
     }
 }
