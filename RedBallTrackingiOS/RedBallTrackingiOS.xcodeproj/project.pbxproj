@@ -13,22 +13,10 @@
 		F70FEB501D14AEBB00F4A5EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70FEB4E1D14AEBB00F4A5EC /* Main.storyboard */; };
 		F70FEB521D14AEBB00F4A5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70FEB511D14AEBB00F4A5EC /* Assets.xcassets */; };
 		F70FEB551D14AEBB00F4A5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70FEB531D14AEBB00F4A5EC /* LaunchScreen.storyboard */; };
-		F70FEB601D14AEBB00F4A5EC /* RedBallTrackingiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FEB5F1D14AEBB00F4A5EC /* RedBallTrackingiOSTests.swift */; };
+		F77DC0951D14D37C003CEBC7 /* coloredBalls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F77DC0941D14D37C003CEBC7 /* coloredBalls.jpg */; };
 		F7DA3ADB1D14B18A002ED65D /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7DA3ADA1D14B18A002ED65D /* OpenCVWrapper.mm */; };
-		F7DA3ADC1D14B18A002ED65D /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7DA3ADA1D14B18A002ED65D /* OpenCVWrapper.mm */; };
 		F7DA3AE01D14B377002ED65D /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7DA3ADF1D14B377002ED65D /* UIImage+OpenCV.mm */; };
-		F7DA3AE11D14B377002ED65D /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7DA3ADF1D14B377002ED65D /* UIImage+OpenCV.mm */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F70FEB5C1D14AEBB00F4A5EC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F70FEB3F1D14AEBB00F4A5EC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F70FEB461D14AEBB00F4A5EC;
-			remoteInfo = RedBallTrackingiOS;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2399D3F6D6BF56AB1BB4EEC9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -41,9 +29,7 @@
 		F70FEB511D14AEBB00F4A5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70FEB541D14AEBB00F4A5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F70FEB561D14AEBB00F4A5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F70FEB5B1D14AEBB00F4A5EC /* RedBallTrackingiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedBallTrackingiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F70FEB5F1D14AEBB00F4A5EC /* RedBallTrackingiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBallTrackingiOSTests.swift; sourceTree = "<group>"; };
-		F70FEB611D14AEBB00F4A5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77DC0941D14D37C003CEBC7 /* coloredBalls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coloredBalls.jpg; sourceTree = "<group>"; };
 		F7DA3AD81D14B18A002ED65D /* RedBallTrackingiOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedBallTrackingiOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		F7DA3AD91D14B18A002ED65D /* RedBallTrackingiOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedBallTrackingiOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		F7DA3ADA1D14B18A002ED65D /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -58,13 +44,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B86E22AEFF2E0153D81E4257 /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F70FEB581D14AEBB00F4A5EC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,9 +70,9 @@
 		F70FEB3E1D14AEBB00F4A5EC = {
 			isa = PBXGroup;
 			children = (
+				F77DC0941D14D37C003CEBC7 /* coloredBalls.jpg */,
 				F7DA3AE21D14B3EB002ED65D /* OpenCVWrappers */,
 				F70FEB491D14AEBB00F4A5EC /* RedBallTrackingiOS */,
-				F70FEB5E1D14AEBB00F4A5EC /* RedBallTrackingiOSTests */,
 				F70FEB481D14AEBB00F4A5EC /* Products */,
 				B8CFA8B44FCC2F1F21064C4C /* Pods */,
 				5C93B5A8D6734F50E1DCE2B5 /* Frameworks */,
@@ -106,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				F70FEB471D14AEBB00F4A5EC /* RedBallTrackingiOS.app */,
-				F70FEB5B1D14AEBB00F4A5EC /* RedBallTrackingiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,15 +100,6 @@
 				F70FEB561D14AEBB00F4A5EC /* Info.plist */,
 			);
 			path = RedBallTrackingiOS;
-			sourceTree = "<group>";
-		};
-		F70FEB5E1D14AEBB00F4A5EC /* RedBallTrackingiOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				F70FEB5F1D14AEBB00F4A5EC /* RedBallTrackingiOSTests.swift */,
-				F70FEB611D14AEBB00F4A5EC /* Info.plist */,
-			);
-			path = RedBallTrackingiOSTests;
 			sourceTree = "<group>";
 		};
 		F7DA3AE21D14B3EB002ED65D /* OpenCVWrappers */ = {
@@ -167,24 +136,6 @@
 			productReference = F70FEB471D14AEBB00F4A5EC /* RedBallTrackingiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F70FEB5A1D14AEBB00F4A5EC /* RedBallTrackingiOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F70FEB671D14AEBB00F4A5EC /* Build configuration list for PBXNativeTarget "RedBallTrackingiOSTests" */;
-			buildPhases = (
-				F70FEB571D14AEBB00F4A5EC /* Sources */,
-				F70FEB581D14AEBB00F4A5EC /* Frameworks */,
-				F70FEB591D14AEBB00F4A5EC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F70FEB5D1D14AEBB00F4A5EC /* PBXTargetDependency */,
-			);
-			name = RedBallTrackingiOSTests;
-			productName = RedBallTrackingiOSTests;
-			productReference = F70FEB5B1D14AEBB00F4A5EC /* RedBallTrackingiOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +148,7 @@
 				TargetAttributes = {
 					F70FEB461D14AEBB00F4A5EC = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					F70FEB5A1D14AEBB00F4A5EC = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = F70FEB461D14AEBB00F4A5EC;
+						DevelopmentTeam = 2WN8Z4EKKL;
 					};
 				};
 			};
@@ -218,7 +166,6 @@
 			projectRoot = "";
 			targets = (
 				F70FEB461D14AEBB00F4A5EC /* RedBallTrackingiOS */,
-				F70FEB5A1D14AEBB00F4A5EC /* RedBallTrackingiOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,15 +176,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70FEB551D14AEBB00F4A5EC /* LaunchScreen.storyboard in Resources */,
+				F77DC0951D14D37C003CEBC7 /* coloredBalls.jpg in Resources */,
 				F70FEB521D14AEBB00F4A5EC /* Assets.xcassets in Resources */,
 				F70FEB501D14AEBB00F4A5EC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F70FEB591D14AEBB00F4A5EC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,25 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F70FEB571D14AEBB00F4A5EC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7DA3ADC1D14B18A002ED65D /* OpenCVWrapper.mm in Sources */,
-				F7DA3AE11D14B377002ED65D /* UIImage+OpenCV.mm in Sources */,
-				F70FEB601D14AEBB00F4A5EC /* RedBallTrackingiOSTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F70FEB5D1D14AEBB00F4A5EC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F70FEB461D14AEBB00F4A5EC /* RedBallTrackingiOS */;
-			targetProxy = F70FEB5C1D14AEBB00F4A5EC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F70FEB4E1D14AEBB00F4A5EC /* Main.storyboard */ = {
@@ -435,10 +358,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RedBallTrackingiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SumitomoHeavyIndustiresLtd..RedBallTrackingiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RedBallTrackingiOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -451,40 +377,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RedBallTrackingiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SumitomoHeavyIndustiresLtd..RedBallTrackingiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RedBallTrackingiOS-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		F70FEB681D14AEBB00F4A5EC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = RedBallTrackingiOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SumitomoHeavyIndustiresLtd..RedBallTrackingiOSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RedBallTrackingiOSTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedBallTrackingiOS.app/RedBallTrackingiOS";
-			};
-			name = Debug;
-		};
-		F70FEB691D14AEBB00F4A5EC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = RedBallTrackingiOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SumitomoHeavyIndustiresLtd..RedBallTrackingiOSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RedBallTrackingiOSTests-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedBallTrackingiOS.app/RedBallTrackingiOS";
 			};
 			name = Release;
 		};
@@ -505,15 +405,6 @@
 			buildConfigurations = (
 				F70FEB651D14AEBB00F4A5EC /* Debug */,
 				F70FEB661D14AEBB00F4A5EC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F70FEB671D14AEBB00F4A5EC /* Build configuration list for PBXNativeTarget "RedBallTrackingiOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F70FEB681D14AEBB00F4A5EC /* Debug */,
-				F70FEB691D14AEBB00F4A5EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
