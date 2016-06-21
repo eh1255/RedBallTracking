@@ -27,6 +27,11 @@ using namespace std;
 @synthesize vMin;
 @synthesize vMax;
 
+@synthesize xCoord;
+@synthesize yCoord;
+
+@synthesize delegate;
+
 // This is how a singlegton is created in Objective-C
 static OpenCVWrapper *sharedInstance = nil;
 + (OpenCVWrapper *)sharedInstance {
@@ -68,6 +73,13 @@ static OpenCVWrapper *sharedInstance = nil;
     self.videoCamera.delegate = self.videoHandler;
     
     [self.videoCamera start];
+}
+
+- (void)updateCoordinates:(NSInteger)x screenCoordinates:(NSInteger)y
+{
+    self.xCoord = x;
+    self.yCoord = y;
+    [delegate targetCoordinatesChanged:x screenCoordinates:y];
 }
 
 

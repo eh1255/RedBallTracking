@@ -153,6 +153,10 @@ using namespace cv;
         }
     }
     
+    // If an object was detected, update the coordinates
+    [ovc updateCoordinates:x screenCoordinates:y];
+    
+    
     // Update the running average
     // http://stackoverflow.com/questions/11567307/calculate-mean-for-vector-of-points
     for (int index = 30; index >= 1; index--) {

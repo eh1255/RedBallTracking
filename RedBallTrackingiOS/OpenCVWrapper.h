@@ -14,6 +14,11 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+@protocol TargetUpdateDelegate
+@required
+-(void) targetCoordinatesChanged:(NSInteger)xCoord screenCoordinates:(NSInteger)yCoord;
+@end
+
 
 @interface OpenCVWrapper : NSObject
 
@@ -22,6 +27,7 @@
 
 - (void)setupVideoCamera:(UIView*) parentView;
 - (void)showProcessedImage:(bool) show;
+- (void)updateCoordinates:(NSInteger)x screenCoordinates:(NSInteger)y;
 
 // Filtering properties
 @property (atomic, assign) NSInteger hMin;
@@ -31,6 +37,10 @@
 @property (atomic, assign) NSInteger vMin;
 @property (atomic, assign) NSInteger vMax;
 
+@property (atomic, assign) NSInteger xCoord;
+@property (atomic, assign) NSInteger yCoord;
+
+@property (nonatomic, weak) id<TargetUpdateDelegate> delegate;
 
 #ifdef __cplusplus
 @property (nonatomic, retain) CvVideoCamera* videoCamera;
