@@ -13,6 +13,7 @@
 		F70FEB501D14AEBB00F4A5EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70FEB4E1D14AEBB00F4A5EC /* Main.storyboard */; };
 		F70FEB521D14AEBB00F4A5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70FEB511D14AEBB00F4A5EC /* Assets.xcassets */; };
 		F70FEB551D14AEBB00F4A5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70FEB531D14AEBB00F4A5EC /* LaunchScreen.storyboard */; };
+		F7591BD71D196E9F0042F262 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7591BD61D196E9F0042F262 /* DesignableButton.swift */; };
 		F77572081D14E71D001D0E21 /* VideoHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = F77572071D14E71D001D0E21 /* VideoHandler.mm */; };
 		F775720A1D1506E7001D0E21 /* lena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F77572091D1506E7001D0E21 /* lena.jpg */; };
 		F77DC0951D14D37C003CEBC7 /* coloredBalls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F77DC0941D14D37C003CEBC7 /* coloredBalls.jpg */; };
@@ -34,6 +35,7 @@
 		F70FEB511D14AEBB00F4A5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70FEB541D14AEBB00F4A5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F70FEB561D14AEBB00F4A5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7591BD61D196E9F0042F262 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		F77572061D14E70E001D0E21 /* VideoHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoHandler.h; sourceTree = "<group>"; };
 		F77572071D14E71D001D0E21 /* VideoHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoHandler.mm; sourceTree = "<group>"; };
 		F77572091D1506E7001D0E21 /* lena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lena.jpg; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				F70FEB4A1D14AEBB00F4A5EC /* AppDelegate.swift */,
 				F70FEB4C1D14AEBB00F4A5EC /* ViewController.swift */,
 				F78AB2981D151D2500853C7A /* SettingsViewController.swift */,
+				F7591BD61D196E9F0042F262 /* DesignableButton.swift */,
 				F70FEB4E1D14AEBB00F4A5EC /* Main.storyboard */,
 				F70FEB511D14AEBB00F4A5EC /* Assets.xcassets */,
 				F70FEB531D14AEBB00F4A5EC /* LaunchScreen.storyboard */,
@@ -255,6 +258,7 @@
 				F70FEB4D1D14AEBB00F4A5EC /* ViewController.swift in Sources */,
 				F70FEB4B1D14AEBB00F4A5EC /* AppDelegate.swift in Sources */,
 				F794D5381D19685D004B0CDE /* CommHandler.swift in Sources */,
+				F7591BD71D196E9F0042F262 /* DesignableButton.swift in Sources */,
 				F77572081D14E71D001D0E21 /* VideoHandler.mm in Sources */,
 				F7DA3AE01D14B377002ED65D /* UIImage+OpenCV.mm in Sources */,
 				F7DA3ADB1D14B18A002ED65D /* OpenCVWrapper.mm in Sources */,
