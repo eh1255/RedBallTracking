@@ -1,30 +1,21 @@
 PODS:
-  - CocoaAsyncSocket (7.4.3):
-    - CocoaAsyncSocket/All (= 7.4.3)
-  - CocoaAsyncSocket/All (7.4.3):
-    - CocoaAsyncSocket/GCD
-    - CocoaAsyncSocket/RunLoop
-  - CocoaAsyncSocket/GCD (7.4.3)
-  - CocoaAsyncSocket/RunLoop (7.4.3)
   - MZAppearance (1.1.6)
   - MZFormSheetPresentationController (2.4.0):
     - MZAppearance
   - OpenCV (3.0.0)
-  - OSCKit (0.3.5):
-    - CocoaAsyncSocket (~> 7.3)
+  - SocketRocket (0.5.1)
 
 DEPENDENCIES:
   - MZFormSheetPresentationController
   - OpenCV
-  - OSCKit
+  - SocketRocket
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetPresentationController: 3b9b6d76adc9f81c2defd0bb59e0f3dc2431e41e
   OpenCV: be07c02f0d8f125f1d40d261e66a66cb66ece3b3
-  OSCKit: 4470dbd30bc792dcf66dc4e7b5d1ec7174add33c
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: f2681c8c661526dd892cdb23c5e548c06b5e1f16
+PODFILE CHECKSUM: dd60463dd1833d6850d20cea266a946c004be70f
 
 COCOAPODS: 1.0.1

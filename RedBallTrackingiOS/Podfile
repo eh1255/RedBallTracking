@@ -5,5 +5,5 @@ use_frameworks!
 target "RedBallTrackingiOS" do
 	pod 'OpenCV'
     pod 'MZFormSheetPresentationController'
-    pod 'OSCKit'
+    pod 'SocketRocket'
 end

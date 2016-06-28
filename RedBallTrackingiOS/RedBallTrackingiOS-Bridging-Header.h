@@ -3,3 +3,4 @@
 //  This is the bridging header for the iOS App
 
 # import "OpenCVWrapper.h"
+# import "F53OSC.h"
