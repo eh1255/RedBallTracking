@@ -35,13 +35,34 @@ using namespace cv;
     Mat workingCopy;
     image.copyTo(workingCopy);
 
+    // Blur to make processing more accurate
     [self medianBlur:workingCopy];
-    [self detectColor:workingCopy];
+    
+    // Process RED
+    [self detectColor:workingCopy colorIndex:0];
     [self erodeThenDilate:workingCopy];
     if (!showRaw) {
         workingCopy.copyTo(image);
     } else {
-        [self contourAndDrawObjects:workingCopy drawOnto:image];
+        [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:0];
+    }
+    
+    // Process BLUE
+    [self detectColor:workingCopy colorIndex:1];
+    [self erodeThenDilate:workingCopy];
+    if (!showRaw) {
+        workingCopy.copyTo(image);
+    } else {
+        [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:1];
+    }
+    
+    // Process YELLOW
+    [self detectColor:workingCopy colorIndex:1];
+    [self erodeThenDilate:workingCopy];
+    if (!showRaw) {
+        workingCopy.copyTo(image);
+    } else {
+        [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:2];
     }
 }
 
@@ -77,15 +98,25 @@ using namespace cv;
 
 
 // Extracts objects of a color specified by the current settings in OpenCVWrapper.sharedInstace
+// index = 0 --> RED
+// index = 1 --> BLUE
+// index = 2 --> YELLOW
 - (void)detectColor:(Mat &) image
+         colorIndex:(NSInteger) index
 {
     // Convert to HSV scale so that we can easily use hue to filter colors
     // Using hue, colors can be accurately filtered with just one parameter
     cvtColor(image, image, CV_BGR2HSV);
     
     // Now filter the hue saturation and value according to the current settings
-    inRange(image, Scalar(ovc.hMin, ovc.sMin, ovc.vMin), Scalar(ovc.hMax, ovc.sMax, ovc.vMax),image);
-    
+    // Which colors are used for filtering is determined by the index
+    if (index == 0) {
+        inRange(image, Scalar(ovc.hMin1, ovc.sMin1, ovc.vMin1), Scalar(ovc.hMax1, ovc.sMax1, ovc.vMax1),image);
+    } else if (index == 1) {
+        inRange(image, Scalar(ovc.hMin2, ovc.sMin2, ovc.vMin2), Scalar(ovc.hMax2, ovc.sMax2, ovc.vMax2),image);
+    } else if (index == 2) {
+        inRange(image, Scalar(ovc.hMin3, ovc.sMin3, ovc.vMin3), Scalar(ovc.hMax3, ovc.sMax3, ovc.vMax3),image);
+    }
 }
 
 
@@ -117,6 +148,7 @@ using namespace cv;
 // Extract contours from thresholded image and draw circle on largest body
 - (void)contourAndDrawObjects:(Mat &) image
                      drawOnto:(Mat &) canvas
+                   colorIndex:(NSInteger) index
 {
     // Initailize two vectors to hold the output of findContours
     std::vector< std::vector<cv::Point> > contours;
@@ -154,8 +186,7 @@ using namespace cv;
     }
     
     // If an object was detected, update the coordinates
-    [ovc updateCoordinates:x screenCoordinates:y];
-    
+    [ovc updateCoordinates:x screenCoordinates:y colorIndex:index];
     
     // Update the running average
     // http://stackoverflow.com/questions/11567307/calculate-mean-for-vector-of-points

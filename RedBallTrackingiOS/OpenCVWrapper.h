@@ -16,7 +16,9 @@
 
 @protocol TargetUpdateDelegate
 @required
--(void) targetCoordinatesChanged:(NSInteger)xCoord screenCoordinates:(NSInteger)yCoord;
+-(void) targetCoordinatesChangedRED:(NSInteger)xCoord screenCoordinates:(NSInteger)yCoord;
+-(void) targetCoordinatesChangedBLUE:(NSInteger)xCoord screenCoordinates:(NSInteger)yCoord;
+-(void) targetCoordinatesChangedYELLOW:(NSInteger)xCoord screenCoordinates:(NSInteger)yCoord;
 @end
 
 
@@ -27,18 +29,41 @@
 
 - (void)setupVideoCamera:(UIView*) parentView;
 - (void)showProcessedImage:(bool) show;
-- (void)updateCoordinates:(NSInteger)x screenCoordinates:(NSInteger)y;
+- (void)updateCoordinates:(NSInteger)x screenCoordinates:(NSInteger)y colorIndex:(NSInteger)index;
 
-// Filtering properties
-@property (atomic, assign) NSInteger hMin;
-@property (atomic, assign) NSInteger hMax;
-@property (atomic, assign) NSInteger sMin;
-@property (atomic, assign) NSInteger sMax;
-@property (atomic, assign) NSInteger vMin;
-@property (atomic, assign) NSInteger vMax;
+// Filtering properties for red
+@property (atomic, assign) NSInteger hMin1;
+@property (atomic, assign) NSInteger hMax1;
+@property (atomic, assign) NSInteger sMin1;
+@property (atomic, assign) NSInteger sMax1;
+@property (atomic, assign) NSInteger vMin1;
+@property (atomic, assign) NSInteger vMax1;
 
-@property (atomic, assign) NSInteger xCoord;
-@property (atomic, assign) NSInteger yCoord;
+// Filtering properties for blue
+@property (atomic, assign) NSInteger hMin2;
+@property (atomic, assign) NSInteger hMax2;
+@property (atomic, assign) NSInteger sMin2;
+@property (atomic, assign) NSInteger sMax2;
+@property (atomic, assign) NSInteger vMin2;
+@property (atomic, assign) NSInteger vMax2;
+
+// Filtering properties for yellow
+@property (atomic, assign) NSInteger hMin3;
+@property (atomic, assign) NSInteger hMax3;
+@property (atomic, assign) NSInteger sMin3;
+@property (atomic, assign) NSInteger sMax3;
+@property (atomic, assign) NSInteger vMin3;
+@property (atomic, assign) NSInteger vMax3;
+
+// Last know coordinates
+@property (atomic, assign) NSInteger xCoordRED;
+@property (atomic, assign) NSInteger yCoordRED;
+
+@property (atomic, assign) NSInteger xCoordBLUE;
+@property (atomic, assign) NSInteger yCoordBLUE;
+
+@property (atomic, assign) NSInteger xCoordYELLOW;
+@property (atomic, assign) NSInteger yCoordYELLOW;
 
 @property (nonatomic, weak) id<TargetUpdateDelegate> delegate;
 

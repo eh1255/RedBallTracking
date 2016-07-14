@@ -66,43 +66,57 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zh7-ij-aNA">
                                 <rect key="frame" x="60" y="0.0" width="520" height="600"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gH1-lI-JXl">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="oHH-n5-E8s"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="RED"/>
+                                            <segment title="BLUE"/>
+                                            <segment title="YELLOW"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KQG-rz-V2h"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-HP-LC4">
-                                        <rect key="frame" x="-2" y="0.0" width="524" height="95"/>
+                                        <rect key="frame" x="-2" y="28" width="524" height="90"/>
                                         <color key="minimumTrackTintColor" red="0.86522414920000001" green="0.32480956820000001" blue="0.37712837360000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5Dl-CF-IGH"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="180" minValue="0.0" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="Pn9-p4-WLi">
-                                        <rect key="frame" x="-2" y="94" width="524" height="95"/>
+                                        <rect key="frame" x="-2" y="117" width="524" height="91"/>
                                         <color key="minimumTrackTintColor" red="0.86522414920000001" green="0.32480956820000001" blue="0.37712837360000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="uts-HS-iCA"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-by-rtB">
-                                        <rect key="frame" x="-2" y="188" width="524" height="95"/>
+                                        <rect key="frame" x="-2" y="207" width="524" height="90"/>
                                         <color key="minimumTrackTintColor" red="0.93747996789999999" green="0.80043518170000005" blue="0.31568866579999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xf3-ZI-xWK"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-el-1jh">
-                                        <rect key="frame" x="-2" y="282" width="524" height="95"/>
+                                        <rect key="frame" x="-2" y="296" width="524" height="90"/>
                                         <color key="minimumTrackTintColor" red="0.93747996789999999" green="0.80043518170000005" blue="0.31568866579999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hR5-6E-1o7"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="juK-le-bzm">
-                                        <rect key="frame" x="-2" y="376" width="524" height="95"/>
+                                        <rect key="frame" x="-2" y="385" width="524" height="91"/>
                                         <color key="minimumTrackTintColor" red="0.72247512840000006" green="0.48278814619999999" blue="0.78830128209999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pdB-Y8-dIx"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="wXc-2x-8if">
-                                        <rect key="frame" x="-2" y="470" width="524" height="95"/>
+                                        <rect key="frame" x="-2" y="475" width="524" height="90"/>
                                         <color key="minimumTrackTintColor" red="0.72247512840000006" green="0.48278814619999999" blue="0.78830128209999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ze0-wU-hel"/>
@@ -155,38 +169,41 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rhq-Io-W2b">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="600"/>
                                 <subviews>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5u-GX-iYL">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="28"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-Yr-XKU">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="94"/>
+                                        <rect key="frame" x="0.0" y="28" width="60" height="89"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.86522414920000001" green="0.32480956820000001" blue="0.37712837360000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUL-ui-hie">
-                                        <rect key="frame" x="0.0" y="94" width="60" height="94"/>
+                                        <rect key="frame" x="0.0" y="117" width="60" height="90"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.86522414920000001" green="0.32480956820000001" blue="0.37712837360000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNw-pl-irc">
-                                        <rect key="frame" x="0.0" y="188" width="60" height="94"/>
+                                        <rect key="frame" x="0.0" y="207" width="60" height="89"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.93747996794871791" green="0.80043518168229078" blue="0.31568866577726712" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le6-Pf-KSc">
-                                        <rect key="frame" x="0.0" y="282" width="60" height="94"/>
+                                        <rect key="frame" x="0.0" y="296" width="60" height="89"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.93747996789999999" green="0.80043518170000005" blue="0.31568866579999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8I-8T-mro">
-                                        <rect key="frame" x="0.0" y="376" width="60" height="94"/>
+                                        <rect key="frame" x="0.0" y="385" width="60" height="90"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.72247512843254791" green="0.4827881461630355" blue="0.78830128205128203" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b80-wt-rId">
-                                        <rect key="frame" x="0.0" y="470" width="60" height="94"/>
+                                        <rect key="frame" x="0.0" y="475" width="60" height="89"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.72247512840000006" green="0.48278814619999999" blue="0.78830128209999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -218,6 +235,7 @@
                             <constraint firstItem="Zh7-ij-aNA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="JvL-eN-veq"/>
                             <constraint firstItem="Rhq-Io-W2b" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q4o-np-6Lt"/>
                             <constraint firstItem="Rhq-Io-W2b" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="RJj-f6-fuz"/>
+                            <constraint firstItem="X5u-GX-iYL" firstAttribute="height" secondItem="gH1-lI-JXl" secondAttribute="height" id="VEi-St-A1m"/>
                             <constraint firstItem="Zh7-ij-aNA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gXu-4u-oDc"/>
                             <constraint firstItem="Zh7-ij-aNA" firstAttribute="leading" secondItem="Rhq-Io-W2b" secondAttribute="trailing" id="hBC-VT-mNj"/>
                         </constraints>
@@ -227,6 +245,7 @@
                         <outlet property="hMin" destination="O9U-HP-LC4" id="XDk-Ug-2xN"/>
                         <outlet property="sMax" destination="ukw-el-1jh" id="Pwp-wG-FBV"/>
                         <outlet property="sMin" destination="Qdm-by-rtB" id="DRe-Gv-Jje"/>
+                        <outlet property="segmentedControl" destination="gH1-lI-JXl" id="kwD-jd-Gry"/>
                         <outlet property="vMax" destination="wXc-2x-8if" id="kZC-dW-wMr"/>
                         <outlet property="vMin" destination="juK-le-bzm" id="KDB-t5-v3H"/>
                     </connections>
