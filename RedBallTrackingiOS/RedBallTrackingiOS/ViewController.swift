@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     func startCamera() {
-         OpenCVWrapper.sharedInstance().setupVideoCamera(imageView)
+        OpenCVWrapper.sharedInstance().setupVideoCamera(imageView)
     }
     
     @IBAction func showSettings(_ sender: AnyObject) {

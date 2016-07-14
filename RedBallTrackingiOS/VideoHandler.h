@@ -24,10 +24,12 @@
 - (void)fft:(cv::Mat &)image;
 - (void)invertColors:(cv::Mat &)image;
 - (void)medianBlur:(cv::Mat &)imag;
-- (void)detectColor:(cv::Mat &)image;
+- (void)detectColor:(cv::Mat &)image
+         colorIndex:(NSInteger)index;
 - (void)erodeThenDilate:(cv::Mat &)image;
 - (void)contourAndDrawObjects:(cv::Mat &)image
-                     drawOnto:(cv::Mat &)canvas;
+                     drawOnto:(cv::Mat &)canvas
+                   colorIndex:(NSInteger)index;
 
 // Determines if the raw output is showing or if makers are draw over original
 // Properties accessed from outside the class have to be setup this way

@@ -20,15 +20,35 @@ using namespace std;
 @synthesize videoHandler;
 @synthesize videoCamera;
 
-@synthesize hMin;
-@synthesize hMax;
-@synthesize sMin;
-@synthesize sMax;
-@synthesize vMin;
-@synthesize vMax;
+@synthesize hMin1;
+@synthesize hMax1;
+@synthesize sMin1;
+@synthesize sMax1;
+@synthesize vMin1;
+@synthesize vMax1;
 
-@synthesize xCoord;
-@synthesize yCoord;
+@synthesize hMin2;
+@synthesize hMax2;
+@synthesize sMin2;
+@synthesize sMax2;
+@synthesize vMin2;
+@synthesize vMax2;
+
+@synthesize hMin3;
+@synthesize hMax3;
+@synthesize sMin3;
+@synthesize sMax3;
+@synthesize vMin3;
+@synthesize vMax3;
+
+@synthesize xCoordRED;
+@synthesize yCoordRED;
+
+@synthesize xCoordBLUE;
+@synthesize yCoordBLUE;
+
+@synthesize xCoordYELLOW;
+@synthesize yCoordYELLOW;
 
 @synthesize delegate;
 
@@ -45,12 +65,30 @@ static OpenCVWrapper *sharedInstance = nil;
 // hue is from 0 to 180, saturation and value go from 0 to 255
 -(id) init {
     self = [super init];
-    self.hMin = 0;
-    self.sMin = 100;
-    self.vMin = 100;
-    self.hMax = 15;
-    self.sMax = 255;
-    self.vMax = 255;
+    
+    // Initialize RED filters
+    self.hMin1 = 0;
+    self.sMin1 = 100;
+    self.vMin1 = 100;
+    self.hMax1 = 15;
+    self.sMax1 = 255;
+    self.vMax1 = 255;
+    
+    // Initialize BLUE filters
+    self.hMin2 = 185;
+    self.sMin2 = 100;
+    self.vMin2 = 100;
+    self.hMax2 = 260;
+    self.sMax2 = 255;
+    self.vMax2 = 255;
+    
+    // Initialize YELLOW filters
+    self.hMin3 = 50;
+    self.sMin3 = 100;
+    self.vMin3 = 100;
+    self.hMax3 = 70;
+    self.sMax3 = 255;
+    self.vMax3 = 255;
 
     return self;
 }
@@ -75,11 +113,23 @@ static OpenCVWrapper *sharedInstance = nil;
     [self.videoCamera start];
 }
 
-- (void)updateCoordinates:(NSInteger)x screenCoordinates:(NSInteger)y
+- (void)updateCoordinates:(NSInteger)x screenCoordinates:(NSInteger)y colorIndex:(NSInteger)index
 {
-    self.xCoord = x;
-    self.yCoord = y;
-    [delegate targetCoordinatesChanged:x screenCoordinates:y];
+    if (index == 0) {
+        self.xCoordRED = x;
+        self.yCoordRED = y;
+        [delegate targetCoordinatesChangedRED:x screenCoordinates:y];
+        
+    } else if (index == 1) {
+        self.xCoordBLUE = x;
+        self.yCoordBLUE = y;
+        [delegate targetCoordinatesChangedBLUE:x screenCoordinates:y];
+        
+    } else if (index == 2) {
+        self.xCoordYELLOW = x;
+        self.yCoordYELLOW = y;
+        [delegate targetCoordinatesChangedYELLOW:x screenCoordinates:y];
+    }
 }
 
 
