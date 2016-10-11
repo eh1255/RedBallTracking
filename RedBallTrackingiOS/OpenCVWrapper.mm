@@ -93,9 +93,9 @@ static OpenCVWrapper *sharedInstance = nil;
     return self;
 }
 
-- (void)showProcessedImage:(bool)show
+- (void)showProcessedImage:(NSInteger)selection
 {
-    self.videoHandler.showRaw = !show;
+    self.videoHandler.rawSelection = selection;
 }
 
 
@@ -103,9 +103,9 @@ static OpenCVWrapper *sharedInstance = nil;
 {
     self.videoCamera = [[CvVideoCamera alloc] initWithParentView: parentView];
     self.videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
-    self.videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetHigh;
+    self.videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetLow;
     self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    self.videoCamera.defaultFPS = 30;
+    self.videoCamera.defaultFPS = 10;
     self.videoCamera.grayscaleMode = NO;
     self.videoHandler = [[VideoHandler alloc] init];
     self.videoCamera.delegate = self.videoHandler;

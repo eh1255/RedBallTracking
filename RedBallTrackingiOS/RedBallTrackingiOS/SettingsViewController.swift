@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        ocv.showProcessedImage(true)
+        ocv.showProcessedImage(1)
         
         // Setup the sliders
         segmentedControlChanged(segmentedControl)
@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillAppear(animated)
-        ocv.showProcessedImage(false)
+        ocv.showProcessedImage(0)
     }
     
     // The segmented control at the top of the screen
@@ -40,6 +40,8 @@ class SettingsViewController: UIViewController {
     @IBAction func segmentedControlChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: // RED
+            ocv.showProcessedImage(1)
+            
             hMin.setValue(Float(ocv.hMin1), animated: true)
             hMax.setValue(Float(ocv.hMax1), animated: true)
             
@@ -50,6 +52,8 @@ class SettingsViewController: UIViewController {
             vMax.setValue(Float(ocv.vMax1), animated: true)
         
         case 1: // BLUE
+            ocv.showProcessedImage(2)
+            
             hMin.setValue(Float(ocv.hMin2), animated: true)
             hMax.setValue(Float(ocv.hMax2), animated: true)
             
@@ -60,6 +64,8 @@ class SettingsViewController: UIViewController {
             vMax.setValue(Float(ocv.vMax2), animated: true)
             
         case 2: // YELLOW
+            ocv.showProcessedImage(3)
+            
             hMin.setValue(Float(ocv.hMin3), animated: true)
             hMax.setValue(Float(ocv.hMax3), animated: true)
             

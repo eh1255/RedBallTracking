@@ -33,6 +33,6 @@
 
 // Determines if the raw output is showing or if makers are draw over original
 // Properties accessed from outside the class have to be setup this way
-@property (nonatomic, assign) bool showRaw;
+@property (nonatomic, assign) NSInteger rawSelection;
 
 @end
