@@ -14,7 +14,8 @@ using namespace cv;
 
 @implementation VideoHandler : NSObject
 
-@synthesize showRaw; // This automatically creates getter and setter functions
+// This automatically creates getter and setter functions
+@synthesize rawSelection;
 
 // This happens as soon as the video handler is created, before anything else
 -(id) init
@@ -22,7 +23,7 @@ using namespace cv;
     self = [super init];
     self->ovc = OpenCVWrapper.sharedInstance;
     self->pastResults.resize(30);
-    self.showRaw = true;
+    self.rawSelection = 0;
     return self;
 }
 
@@ -41,27 +42,27 @@ using namespace cv;
     // Process RED
     [self detectColor:workingCopy colorIndex:0];
     [self erodeThenDilate:workingCopy];
-    if (!showRaw) {
+    if (rawSelection == 1) {
         workingCopy.copyTo(image);
-    } else {
+    } else if (rawSelection == 0) {
         [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:0];
     }
     
     // Process BLUE
     [self detectColor:workingCopy colorIndex:1];
     [self erodeThenDilate:workingCopy];
-    if (!showRaw) {
+    if (rawSelection == 2) {
         workingCopy.copyTo(image);
-    } else {
+    } else if (rawSelection == 0) {
         [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:1];
     }
     
     // Process YELLOW
     [self detectColor:workingCopy colorIndex:1];
     [self erodeThenDilate:workingCopy];
-    if (!showRaw) {
+    if (rawSelection == 3) {
         workingCopy.copyTo(image);
-    } else {
+    } else if (rawSelection == 0) {
         [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:2];
     }
 }

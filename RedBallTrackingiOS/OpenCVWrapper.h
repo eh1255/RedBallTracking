@@ -28,7 +28,7 @@
 + (OpenCVWrapper *)sharedInstance;
 
 - (void)setupVideoCamera:(UIView*) parentView;
-- (void)showProcessedImage:(bool) show;
+- (void)showProcessedImage:(NSInteger) selection; // 0 = normal image, 1 = red, 2 = blue, 3 = yellow
 - (void)updateCoordinates:(NSInteger)x screenCoordinates:(NSInteger)y colorIndex:(NSInteger)index;
 
 // Filtering properties for red
