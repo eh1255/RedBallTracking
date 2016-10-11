@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var settingsButton: UIButton!
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
@@ -22,22 +22,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Starting the camera immediately in viewDidLoad, so I just tossed in a delay to give the views time to load up
         // You could do it in viewDidAppear as well, but that can get called multiple times. This solution doesn't require any extra variables
-        performSelector(#selector(startCamera), withObject: nil, afterDelay: 2.5)
+        perform(#selector(startCamera), with: nil, afterDelay: 2.5)
     }
     
     func startCamera() {
          OpenCVWrapper.sharedInstance().setupVideoCamera(imageView)
     }
     
-    @IBAction func showSettings(sender: AnyObject) {
+    @IBAction func showSettings(_ sender: AnyObject) {
         // Present the settings controller in a popover view
-        let settingsController = storyboard?.instantiateViewControllerWithIdentifier("Settings") as! SettingsViewController
+        let settingsController = storyboard?.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
         
         let formSheetController   = MZFormSheetPresentationViewController(contentViewController: settingsController)
         formSheetController.presentationController?.shouldDismissOnBackgroundViewTap = true
-        formSheetController.presentationController?.backgroundColor = UIColor.clearColor()
-        formSheetController.presentationController?.contentViewSize = CGSizeMake(view.frame.width*0.85, view.frame.height*0.65)
-        self.presentViewController(formSheetController, animated: true, completion: nil)
+        formSheetController.presentationController?.backgroundColor = UIColor.clear
+        formSheetController.presentationController?.contentViewSize = CGSize(width: view.frame.width*0.85, height: view.frame.height*0.65)
+        self.present(formSheetController, animated: true, completion: nil)
     }
 }
 

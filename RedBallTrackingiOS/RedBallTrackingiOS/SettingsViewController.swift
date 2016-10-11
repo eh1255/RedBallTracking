@@ -12,23 +12,23 @@ class SettingsViewController: UIViewController {
     
     let ocv = OpenCVWrapper.sharedInstance()
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ocv.showProcessedImage(true)
+        ocv?.showProcessedImage(true)
         
-        hMin.setValue(Float(ocv.hMin), animated: false)
-        hMax.setValue(Float(ocv.hMax), animated: false)
+        hMin.setValue(Float((ocv?.hMin)!), animated: false)
+        hMax.setValue(Float((ocv?.hMax)!), animated: false)
         
-        sMin.setValue(Float(ocv.sMin), animated: false)
-        sMax.setValue(Float(ocv.sMax), animated: false)
+        sMin.setValue(Float((ocv?.sMin)!), animated: false)
+        sMax.setValue(Float((ocv?.sMax)!), animated: false)
         
-        vMin.setValue(Float(ocv.vMin), animated: false)
-        vMax.setValue(Float(ocv.vMax), animated: false)
+        vMin.setValue(Float((ocv?.vMin)!), animated: false)
+        vMax.setValue(Float((ocv?.vMax)!), animated: false)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ocv.showProcessedImage(false)
+        ocv?.showProcessedImage(false)
     }
 
     // References to the sliders on the settings page
@@ -40,16 +40,16 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var vMax: UISlider!
     
     // Update the variables used for filtering by OpenCV
-    @IBAction func sliderChanged(sender:UISlider) {
+    @IBAction func sliderChanged(_ sender:UISlider) {
         let value = NSInteger(sender.value)
         
         switch sender {
-        case hMin:  ocv.hMin = value
-        case hMax:  ocv.hMax = value
-        case sMin:  ocv.sMin = value
-        case sMax:  ocv.sMax = value
-        case vMin:  ocv.vMin = value
-        case vMax:  ocv.vMax = value
+        case hMin:  ocv?.hMin = value
+        case hMax:  ocv?.hMax = value
+        case sMin:  ocv?.sMin = value
+        case sMax:  ocv?.sMax = value
+        case vMin:  ocv?.vMin = value
+        case vMax:  ocv?.vMax = value
         default: break
         }
         
@@ -66,24 +66,24 @@ class SettingsViewController: UIViewController {
     }
     
     
-    @IBAction func pressedChangeServerAddressButton(sender: UIButton) {
-        let alertController = UIAlertController(title: "Server Address", message: "Enter the server's IP or local network address", preferredStyle: UIAlertControllerStyle.Alert)
+    @IBAction func pressedChangeServerAddressButton(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Server Address", message: "Enter the server's IP or local network address", preferredStyle: UIAlertControllerStyle.alert)
         
-        alertController.addTextFieldWithConfigurationHandler { (textField) in
+        alertController.addTextField { (textField) in
             textField.text = CommHanlder.sharedInstance.serverAddress
         }
         
-        let updateAction = UIAlertAction(title: "Save", style: .Default) { (action) in
+        let updateAction = UIAlertAction(title: "Save", style: .default) { (action) in
             if let newAddress = alertController.textFields![0].text {
                 CommHanlder.sharedInstance.serverAddress = newAddress
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alertController.addAction(cancelAction)
         alertController.addAction(updateAction)
         
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }
