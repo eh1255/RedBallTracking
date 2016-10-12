@@ -33,37 +33,43 @@ using namespace cv;
     // This function has no return. We have to work on image where it sits in memory
     // To do that, we create a copy of it, modify the copy, and the overwrite image at the
     // same address in memory when we're done
-    Mat workingCopy;
-    image.copyTo(workingCopy);
-
+    Mat workingCopyRed;
+    Mat workingCopyBlue;
+    Mat workingCopyYellow;
+    image.copyTo(workingCopyRed);
+    
     // Blur to make processing more accurate
-    [self medianBlur:workingCopy];
+    // Perfoarm copying after blurring to save on computation
+    [self medianBlur:workingCopyRed];
+    
+    workingCopyRed.copyTo(workingCopyBlue);
+    workingCopyRed.copyTo(workingCopyYellow);
     
     // Process RED
-    [self detectColor:workingCopy colorIndex:0];
-    [self erodeThenDilate:workingCopy];
+    [self detectColor:workingCopyRed colorIndex:0];
+    [self erodeThenDilate:workingCopyRed];
     if (rawSelection == 1) {
-        workingCopy.copyTo(image);
+        workingCopyRed.copyTo(image);
     } else if (rawSelection == 0) {
-        [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:0];
+        [self contourAndDrawObjects:workingCopyRed drawOnto:image colorIndex:0];
     }
     
     // Process BLUE
-    [self detectColor:workingCopy colorIndex:1];
-    [self erodeThenDilate:workingCopy];
+    [self detectColor:workingCopyBlue colorIndex:1];
+    [self erodeThenDilate:workingCopyBlue];
     if (rawSelection == 2) {
-        workingCopy.copyTo(image);
+        workingCopyBlue.copyTo(image);
     } else if (rawSelection == 0) {
-        [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:1];
+        [self contourAndDrawObjects:workingCopyBlue drawOnto:image colorIndex:1];
     }
     
     // Process YELLOW
-    [self detectColor:workingCopy colorIndex:1];
-    [self erodeThenDilate:workingCopy];
+    [self detectColor:workingCopyYellow colorIndex:2];
+    [self erodeThenDilate:workingCopyYellow];
     if (rawSelection == 3) {
-        workingCopy.copyTo(image);
+        workingCopyYellow.copyTo(image);
     } else if (rawSelection == 0) {
-        [self contourAndDrawObjects:workingCopy drawOnto:image colorIndex:2];
+        [self contourAndDrawObjects:workingCopyYellow drawOnto:image colorIndex:2];
     }
 }
 
@@ -175,9 +181,9 @@ using namespace cv;
             Moments moment = moments(contours[index]);
             double  area   = moment.m00;
             
-            // If the area is less than 20x20, then we'll going to count it as noise
+            // If the area is less than some size, then we're going to count it as noise
             // We only want the one image contour with the biggest area, so save and compare with a refrence area
-            if (area > referenceArea && area > 400) {
+            if (area > referenceArea && area > 100) {
                 x = moment.m10/area;
                 y = moment.m01/area;
                 objectFound   = true;
@@ -205,7 +211,7 @@ using namespace cv;
         
         // Drawing a circle
         int radius = sqrt(referenceArea/(2*3.1415));
-        circle(canvas, mean, radius, Scalar(255,255,255),10);
+        circle(canvas, mean, radius, Scalar(255,255,255),2);
         
         // Drawing text
         std::string text   = "X:";
@@ -213,8 +219,8 @@ using namespace cv;
         text += " Y:";
         text += std::to_string(y);
         int fontFace  = FONT_HERSHEY_SIMPLEX;
-        int fontScale = 2;
-        int thickness = 3;
+        int fontScale = 1;
+        int thickness = 1;
         cv::Point location(x - radius ,y - radius);
         cv::putText(canvas, text, location, fontFace, fontScale, Scalar(255, 255, 2525), thickness);
     }

@@ -22,40 +22,40 @@ class CommHanlder:NSObject, TargetUpdateDelegate {
     }
     
     // These functions will get called whenever an object is detected by the camera
-    func targetCoordinatesChangedRED(xCoord: Int, screenCoordinates yCoord: Int) {
+    func targetCoordinatesChangedRED(_ xCoord: Int, screenCoordinates yCoord: Int) {
         sendCoordinatesRED(x: xCoord, y: yCoord)
     }
     
-    func targetCoordinatesChangedBLUE(xCoord: Int, screenCoordinates yCoord: Int) {
+    func targetCoordinatesChangedBLUE(_ xCoord: Int, screenCoordinates yCoord: Int) {
         sendCoordinatesBLUE(x: xCoord, y: yCoord)
     }
     
-    func targetCoordinatesChangedYELLOW(xCoord: Int, screenCoordinates yCoord: Int) {
+    func targetCoordinatesChangedYELLOW(_ xCoord: Int, screenCoordinates yCoord: Int) {
         sendCoordinatesYELLOW(x: xCoord, y: yCoord)
     }
     
     // Send the coordinates out to the server using the Open Sound Control protocol
-    func sendCoordinatesRED(x x:Int, y:Int) {
+    func sendCoordinatesRED(x:Int, y:Int) {
         let message = F53OSCMessage(addressPattern: serverAddress, arguments: [x, y])
         
         oscClient.host = serverAddress
         oscClient.port = 9000
-        oscClient.sendPacket(message)
+        oscClient.send(message)
     }
     
-    func sendCoordinatesBLUE(x x:Int, y:Int) {
+    func sendCoordinatesBLUE(x:Int, y:Int) {
         let message = F53OSCMessage(addressPattern: serverAddress, arguments: [x, y])
         
         oscClient.host = serverAddress
         oscClient.port = 9000
-        oscClient.sendPacket(message)
+        oscClient.send(message)
     }
     
-    func sendCoordinatesYELLOW(x x:Int, y:Int) {
+    func sendCoordinatesYELLOW(x:Int, y:Int) {
         let message = F53OSCMessage(addressPattern: serverAddress, arguments: [x, y])
         
         oscClient.host = serverAddress
         oscClient.port = 9000
-        oscClient.sendPacket(message)
+        oscClient.send(message)
     }
 }

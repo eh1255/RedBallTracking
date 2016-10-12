@@ -14,15 +14,15 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ocv?.showProcessedImage(true)
+        ocv?.showProcessedImage(0)
         
         // Setup the sliders
-        segmentedControlChanged(segmentedControl)
+        segmentedControlChanged(sender: segmentedControl)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ocv?.showProcessedImage(false)
+        ocv?.showProcessedImage(0)
     }
     
     // The segmented control at the top of the screen
@@ -40,40 +40,40 @@ class SettingsViewController: UIViewController {
     @IBAction func segmentedControlChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: // RED
-            ocv.showProcessedImage(1)
+            ocv?.showProcessedImage(1)
             
-            hMin.setValue(Float(ocv.hMin1), animated: true)
-            hMax.setValue(Float(ocv.hMax1), animated: true)
+            hMin.setValue(Float(ocv!.hMin1), animated: true)
+            hMax.setValue(Float(ocv!.hMax1), animated: true)
             
-            sMin.setValue(Float(ocv.sMin1), animated: true)
-            sMax.setValue(Float(ocv.sMax1), animated: true)
+            sMin.setValue(Float(ocv!.sMin1), animated: true)
+            sMax.setValue(Float(ocv!.sMax1), animated: true)
             
-            vMin.setValue(Float(ocv.vMin1), animated: true)
-            vMax.setValue(Float(ocv.vMax1), animated: true)
+            vMin.setValue(Float(ocv!.vMin1), animated: true)
+            vMax.setValue(Float(ocv!.vMax1), animated: true)
         
         case 1: // BLUE
-            ocv.showProcessedImage(2)
+            ocv?.showProcessedImage(2)
             
-            hMin.setValue(Float(ocv.hMin2), animated: true)
-            hMax.setValue(Float(ocv.hMax2), animated: true)
+            hMin.setValue(Float(ocv!.hMin2), animated: true)
+            hMax.setValue(Float(ocv!.hMax2), animated: true)
             
-            sMin.setValue(Float(ocv.sMin2), animated: true)
-            sMax.setValue(Float(ocv.sMax2), animated: true)
+            sMin.setValue(Float(ocv!.sMin2), animated: true)
+            sMax.setValue(Float(ocv!.sMax2), animated: true)
             
-            vMin.setValue(Float(ocv.vMin2), animated: true)
-            vMax.setValue(Float(ocv.vMax2), animated: true)
+            vMin.setValue(Float(ocv!.vMin2), animated: true)
+            vMax.setValue(Float(ocv!.vMax2), animated: true)
             
         case 2: // YELLOW
-            ocv.showProcessedImage(3)
+            ocv?.showProcessedImage(3)
             
-            hMin.setValue(Float(ocv.hMin3), animated: true)
-            hMax.setValue(Float(ocv.hMax3), animated: true)
+            hMin.setValue(Float(ocv!.hMin3), animated: true)
+            hMax.setValue(Float(ocv!.hMax3), animated: true)
             
-            sMin.setValue(Float(ocv.sMin3), animated: true)
-            sMax.setValue(Float(ocv.sMax3), animated: true)
+            sMin.setValue(Float(ocv!.sMin3), animated: true)
+            sMax.setValue(Float(ocv!.sMax3), animated: true)
             
-            vMin.setValue(Float(ocv.vMin3), animated: true)
-            vMax.setValue(Float(ocv.vMax3), animated: true)
+            vMin.setValue(Float(ocv!.vMin3), animated: true)
+            vMax.setValue(Float(ocv!.vMax3), animated: true)
         default:
             break
         }
@@ -86,34 +86,34 @@ class SettingsViewController: UIViewController {
         switch segmentedControl.selectedSegmentIndex {
         case 0: // RED
             switch sender {
-            case hMin:  ocv.hMin1 = value
-            case hMax:  ocv.hMax1 = value
-            case sMin:  ocv.sMin1 = value
-            case sMax:  ocv.sMax1 = value
-            case vMin:  ocv.vMin1 = value
-            case vMax:  ocv.vMax1 = value
+            case hMin:  ocv?.hMin1 = value
+            case hMax:  ocv?.hMax1 = value
+            case sMin:  ocv?.sMin1 = value
+            case sMax:  ocv?.sMax1 = value
+            case vMin:  ocv?.vMin1 = value
+            case vMax:  ocv?.vMax1 = value
             default: break
             }
             
         case 1:
             switch sender {
-            case hMin:  ocv.hMin2 = value
-            case hMax:  ocv.hMax2 = value
-            case sMin:  ocv.sMin2 = value
-            case sMax:  ocv.sMax2 = value
-            case vMin:  ocv.vMin2 = value
-            case vMax:  ocv.vMax2 = value
+            case hMin:  ocv?.hMin2 = value
+            case hMax:  ocv?.hMax2 = value
+            case sMin:  ocv?.sMin2 = value
+            case sMax:  ocv?.sMax2 = value
+            case vMin:  ocv?.vMin2 = value
+            case vMax:  ocv?.vMax2 = value
             default: break
             }
             
         case 2:
             switch sender {
-            case hMin:  ocv.hMin3 = value
-            case hMax:  ocv.hMax3 = value
-            case sMin:  ocv.sMin3 = value
-            case sMax:  ocv.sMax3 = value
-            case vMin:  ocv.vMin3 = value
-            case vMax:  ocv.vMax3 = value
+            case hMin:  ocv?.hMin3 = value
+            case hMax:  ocv?.hMax3 = value
+            case sMin:  ocv?.sMin3 = value
+            case sMax:  ocv?.sMax3 = value
+            case vMin:  ocv?.vMin3 = value
+            case vMax:  ocv?.vMax3 = value
             default: break
         }
 
