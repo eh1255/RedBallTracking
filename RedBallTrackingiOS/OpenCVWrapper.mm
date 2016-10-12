@@ -75,18 +75,18 @@ static OpenCVWrapper *sharedInstance = nil;
     self.vMax1 = 255;
     
     // Initialize BLUE filters
-    self.hMin2 = 185;
+    self.hMin2 = 88;
     self.sMin2 = 100;
     self.vMin2 = 100;
-    self.hMax2 = 260;
+    self.hMax2 = 112;
     self.sMax2 = 255;
     self.vMax2 = 255;
     
     // Initialize YELLOW filters
-    self.hMin3 = 50;
+    self.hMin3 = 21;
     self.sMin3 = 100;
     self.vMin3 = 100;
-    self.hMax3 = 70;
+    self.hMax3 = 38;
     self.sMax3 = 255;
     self.vMax3 = 255;
 
